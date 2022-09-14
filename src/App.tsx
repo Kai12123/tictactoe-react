@@ -29,7 +29,8 @@ function App() {
     ],
     playerTurn: 1,
   });
-
+  // TODO pass setState or a function that uses setState internally
+  // TODO onClick of a grid position, put an X or O in that position
   return (
     <div className="App">
       <Grid gridMarkers={gridMarkers} />
@@ -68,6 +69,8 @@ function Grid({ gridMarkers }: { gridMarkers: GridMarkerType[] }) {
         // TODO e.g. left = (position%3) * GRID_WIDTH
         const left = ((gridMarker.position % 3) / 3) * GRID_WIDTH;
         // TODO top
+
+        // TODO show all grid markers (empty), and only show X or O once it's been clicked
         return (
           <div
             key={gridMarker.position}
@@ -75,6 +78,10 @@ function Grid({ gridMarkers }: { gridMarkers: GridMarkerType[] }) {
               position: "absolute",
               left,
             }}
+            onClick={
+              () => {}
+              // TODO
+            }
           >
             GridMarker
           </div>
